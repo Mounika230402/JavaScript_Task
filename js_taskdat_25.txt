@@ -1,0 +1,192 @@
+Problem 1
+1.Length:
+Write a function to find the length of an array without using the length property.
+Input: arrayLength([1, 2, 3, 4, 5])
+Output: 5
+
+function arrayLength(arr){
+    var n1=arr.push();
+    return n1;
+}
+console.log(arrayLength([1,2,3,4,5]));
+
+            (or)      
+
+function arrayLength(arr){
+    let count=0;
+    let i=0
+    while(true){
+        if(arr[i]==undefined)
+        break;
+        else
+        count++;
+    i++;
+    }
+    return count;
+}
+console.log(`Length of an array is `,arrayLength([1,2,3,4,5]));
+
+_____________________________________________________________________________________________________________________
+
+Problem 2
+2.At:
+Implement a function getElementAtIndex(array, index) that returns the element at the given index in the array.
+Input: getElementAtIndex([10, 20, 30, 40, 50], 2)
+Output: 30
+
+function getElementAtIndex(arr,index){
+    for(i=0;i<arr.length;i++)
+    {
+        if(i==index)
+        return arr[i];
+    }
+}
+console.log(getElementAtIndex([10, 20, 30, 40, 50], 2))
+
+___________________________________________________________________________________________________________________________
+
+Problem 3
+3.Push:
+Write a function addToArrayEnd(array, element) that adds an element to the end of the array using the push method.
+Input: addToArrayEnd([1, 2, 3], 4)
+Output: [1, 2, 3, 4]
+
+function addToArrayEnd(arr,value){
+    arr[arr.length]=value;
+    return arr;
+}
+console.log(addToArrayEnd([1, 2, 3], 4));
+
+or
+
+function addToArrayEnd(arr,value){   
+    arr.push(value) ;
+    return arr;
+    }
+console.log(addToArrayEnd([1, 2, 3], 4));
+
+___________________________________________________________________________________________________________________________________________
+
+Problem 4
+4.Pop:
+Implement a function removeLastElement(array) that removes the last element from the array using the pop method.
+Input: removeLastElement([1, 2, 3, 4, 5])
+Output: [1, 2, 3, 4]
+
+function removeLastElement(arr){
+    arr.pop();
+    return arr;
+}
+console.log(removeLastElement([1,2,3,4,5]));
+
+______________________________________________________________________________________________________________________________________________
+
+Problem 5
+5.Shift:
+Write a function removeFirstElement(array) that removes the first element from the array using the shift method.
+Input: removeFirstElement([1, 2, 3, 4, 5])
+Output: [2, 3, 4, 5]
+
+function removeFirstElement(arr){
+    arr.shift();
+    return arr;
+}
+console.log(removeFirstElement([1,2,3,4,5]));
+
+________________________________________________________________________________________________________________________________________________
+
+Problem 6
+6.Unshift:
+Implement a function addToArrayStart(array, element) that adds an element to the beginning of the array using the unshift method.
+Input: addToArrayStart([2, 3, 4, 5], 1)
+Output: [1, 2, 3, 4, 5]
+
+function addToArrayStart(arr,value){   
+    arr.unshift(value) ;
+    return arr;
+    }
+console.log(addToArrayStart([2, 3, 4, 5], 1));
+
+__________________________________________________________________________________________________________________________________________________
+
+Problem 7
+7.Concat:
+Write a function concatArrays(array1, array2) that concatenates two arrays into a single array using the concat method.
+Input: concatArrays([1, 2, 3], [4, 5, 6])
+Output: [1, 2, 3, 4, 5, 6]
+
+function concatArrays(arr1,arr2){
+    let arr=arr1.concat(arr2);
+    return arr;
+}
+console.log(concatArrays([1, 2, 3], [4, 5, 6]))
+
+___________________________________________________________________________________________________________________________________________________
+
+Problem 8
+8.Flat:
+Implement a function flattenArray(nestedArray) that flattens a nested array into a single-level array using the flat method.
+Input: flattenArray([[1, 2], [3, 4], [5, 6]])
+Output: [1, 2, 3, 4, 5, 6]
+
+function flattenArray(arr){
+    let arr1=arr.flat(1);
+    return arr1;
+}
+console.log(flattenArray([[1, 2], [3, 4], [5, 6]]))
+
+___________________________________________________________________________________________________________________________________________________
+
+Problem 9
+9.Join:
+Write a function joinArrayElements(array, separator) that joins all elements of the array into a string with the specified separator using the join method.
+Input: joinArrayElements(["apple", "banana", "orange"], ", ")
+Output: "apple, banana, orange"
+
+function joinArrayElements(array,separator){
+    let arr1=array.join(separator)
+    return arr1;
+}
+console.log(joinArrayElements(["apple", "banana", "orange"], ", "));
+
+_____________________________________________________________________________________________________________________________________________________
+
+Problem 10
+10.Delete:
+Implement a function deleteElement(array, index) that deletes the element at the given index in the array using the delete operator.
+Input: deleteElement(["a", "b", "c", "d", "e"], 2)
+Output: ["a", "b", empty, "d", "e"]
+
+function deleteElement(a, index){
+    delete a[index];
+    return a;
+}
+console.log(deleteElement(["a", "b", "c", "d", "e"], 2))
+
+_______________________________________________________________________________________________________________________________________________________
+
+Problem 11
+11.ToString:
+Write a function arrayToString(array) that converts an array into a string representation using the toString method.
+Input: arrayToString([1, 2, 3, 4, 5])
+Output: "1,2,3,4,5"
+
+function arrayToString(array){
+    let n1=array.toString();
+    return n1;
+}
+console.log(arrayToString([1, 2, 3, 4, 5]))
+
+_________________________________________________________________________________________________________________________________________________________
+
+Problem 12
+12.IsArray:
+Implement a function isArray(value) that checks if the given value is an array using the isArray method.
+Input: isArray([1, 2, 3, 4, 5])
+Output: true
+
+function isArray(array)
+{
+    return Array.isArray(array);
+}
+console.log(isArray([1, 2, 3, 4, 5]))

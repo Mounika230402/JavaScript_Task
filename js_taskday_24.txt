@@ -1,0 +1,302 @@
+1.check if a given string is a palindrome (reads the same backward as forward)  => "mom","RAM","siri".
+__________________________________________________________________________________________________________________________
+
+Code:
+
+function reverse(ch){
+    let temp="";
+    for(var i=ch.length-1;i>=0;i--)
+    {
+        if(ch[i]==" ")
+        continue;
+        else
+        temp+=ch[i];
+    }
+    if(temp==ch)
+    return true;
+    else
+    return false;
+}
+let str=input("Enter a string: ");
+if(reverse(str)==true)
+console.log(`${str} is Palindrome String`);
+else
+console.log(`${str} is not a Palindrome String`);
+
+_____________________________________________________________________________________________________________________________
+
+2.capitalize the first letter of each word in a sentence.   => " hi good morning" // "Hi Good Morning"
+
+
+Code:
+
+function first_letter_capital(str){
+    let s=str.split(" ");
+    let a=[];
+    for(i=0;i<s.length;i++)
+    {
+        a[i]=s[i].charAt(0).toUpperCase() + s[i].slice(1);
+    }
+    return a.join(" ");
+    return s;
+}
+
+let str="hi good evening morning afternoon";
+console.log(first_letter_capital(str));
+                    
+                     (or)
+
+function first_letter_capital(str){
+        let str1=str[0].toUpperCase();
+        let flag=0;
+        for(i=1;i<str.length;i++)
+        {
+            if(flag==1){
+                str1+=str[i].toUpperCase();
+                flag=0
+                continue;
+            }
+            if(str[i]==" "){
+                flag=1;
+            }
+            str1+=str[i]; 
+        }
+        return str1;
+    }
+console.log(first_letter_capital("hi good morning"));
+______________________________________________________________________________________________________________________________
+
+3.count the occurrences of a specific word in a string. => "hello world" // 'l' count is 3
+
+Code:
+
+function letter_occurrences(str,ch){
+    let count=0;
+    for(i=0;i<str.length;i++)
+    {
+        if(str[i]==ch)
+        count++;
+    }
+    return count;
+}
+
+let str="hello world";
+let ch='l';
+console.log(letter_occurrences(str,ch));
+
+_________________________________________________________________________________________________________________________________
+
+4.reverse the words in a sentence.
+
+Code:
+
+function sentence(inp){
+    let s=inp.split(' ');
+    let a=[];
+    for(i=0;i<s.length;i++)
+    {
+        a[i]=reverse(s[i])
+    }
+    return a.join(" ");
+}
+
+function reverse(str){
+    let str1="";
+    for(let j=str.length-1;j>=0;j--)
+    {
+        str1+=str[j];
+    }
+    return str1;
+}
+
+console.log(sentence("Good morning evening afternoon"));
+
+________________________________________________________________________________________________________________________________
+
+5.Count the Number of Characters in a String:
+
+Code:
+
+function count_Of_Chararcters(str){
+    let count=0;
+    for(i=0;i<str.length;i++)
+    {
+        if(str[i]>='a' && str[i]<='z' || str[i]>='A' && str[i]=='Z')
+        {
+            count++;
+        }
+    }
+    return count;
+}
+console.log(count_Of_Chararcters("mounika1234prasanna"));
+
+_______________________________________________________________________________________________________________________________
+6.Convert String to Uppercase:
+
+Code:
+
+function to_Upper_Case(str){
+    let str1="";
+    for(i=0;i<str.length;i++)
+    {
+        str1+=str[i].toUpperCase();
+    }
+    return str1;
+}
+console.log(to_Upper_Case("mounika"));
+
+________________________________________________________________________________________________________________________________
+
+7.Check if a String Contains a Substring:
+
+Code:
+
+let str="The rain pouring down";
+let sub="ain";
+if(str.includes(sub)==true)
+{
+    console.log(`${sub} is substring of ${str}`);
+}
+else{
+    console.log(`${sub} is not a substring of ${str}`)
+}
+________________________________________________________________________________________________________________________________
+
+8.Find the Index of a Substring:
+
+Code:
+
+let str="The rain pouring down";
+let sub="ain";
+console.log(str.search(sub));
+
+________________________________________________________________________________________________________________________________
+
+9.Replace a Substring with Another String:
+
+Code:
+
+let str="Good Morning";
+let ex="Morning"
+let ne="Afternoon"
+console.log(str.replace(ex,ne));
+
+________________________________________________________________________________________________________________________________
+
+10.Trim Whitespace from a String
+
+Code:
+
+let str="                  Good Morning Afternoon Night                       "
+console.log(str.trim())
+
+________________________________________________________________________________________________________________________________
+
+11.Split a String into an Array of Substrings:
+
+Code:
+
+let str="Good Morning Afternoon Night"
+console.log(str.split(" "));
+
+________________________________________________________________________________________________________________________________
+
+12. Concatenate Strings:
+
+Code:
+
+let a="Good Morning";
+let b=" Afternoon";
+console.log(a.concat(b));
+
+________________________________________________________________________________________________________________________________
+
+13.Check if a String Starts with a Substring:
+
+Code:
+
+let str="Good Morning"
+let sub="Good"
+console.log(str.startsWith(sub));
+
+________________________________________________________________________________________________________________________________
+
+14.Check if a String Ends with a Substring:
+
+Code:
+
+
+let str="Good Morning"
+let sub="Morning"
+console.log(str.endsWith(sub));
+
+_______________________________________________________________________________________________________________________________
+
+15.Get a Substring:
+
+Code:
+
+let str="Good Morning Afternoon";
+console.log(str.substring(5,12));
+
+_______________________________________________________________________________________________________________________________
+
+16.Reverse a String:
+
+Code:
+
+function reverse(str){
+    let str1="";
+    for(let j=str.length-1;j>=0;j--)
+    {
+        str1+=str[j];
+    }
+    return str1;
+}
+console.log(reverse("Morning"));
+
+________________________________________________________________________________________________________________________________
+
+17.Convert String to Lowercase:
+
+Code:
+
+function to_Lower_Case(str){
+    let str1="";
+    for(i=0;i<str.length;i++)
+    {
+        str1+=str[i].toLowerCase();
+    }
+    return str1;
+}
+console.log(to_Lower_Case("MOUNIKA"));
+
+_________________________________________________________________________________________________________________________________
+
+18.Check if a String is Empty:
+
+Code:
+
+let str=""
+if(str=="")
+console.log(`${str} is an empty string`);
+else
+console.log(`${str} is not an empty string`);
+
+_________________________________________________________________________________________________________________________________
+
+19.Check if a String Contains Only Digits
+
+Code:
+
+function Count_of_Digits(str){
+    let count=0
+    for(i=0;i<str.length;i++)
+    {
+        if(str[i]>='0' && str[i]<='9')
+        count++;
+    }return count;
+}
+console.log(Count_of_Digits("123mounika123"));
+___________________________________________________________________________________________________________________________________
+
