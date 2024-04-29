@@ -1,0 +1,68 @@
+Problem 1
+1.Write a JavaScript function that takes an array of strings and a target string. The function should return the index of the target string in the array using the indexOf method. If the target string is not found, return -1.
+
+code:
+
+function index(array,str){
+    let n=array.indexOf(str);
+    return n
+}
+console.log(index(["apple","orange","banana","kiwi"],"kiwi"));
+console.log(index(["apple","orange","banana","kiwi"],"grapes"));
+
+__________________________________________________________________________________________________________________________________________________
+
+Problem 2
+2.Write a JavaScript function that takes an array of numbers and two indices. The function should return a new array containing the elements from the original array starting from the first index (inclusive) to the second index (exclusive) using the slice method.
+
+code:
+
+function subarray(arr,index1,index2){
+    return arr.slice(index1,index2);
+}
+console.log(subarray([10,20,30,40,50,60,70,80],3,7));
+__________________________________________________________________________________________________________________________________________________
+
+Problem 3
+3.Write a JavaScript function that takes an array of objects representing books. Each book object contains properties for title, author, and year. The function should remove a book from the array based on the title using the splice method, and return the modified array.
+
+code:
+
+const arr=[{title:"Atomic Habits",author:"James Clear",year:2001},{title:"The Hidden Hindu",author:"Akshay sharma",year:2002},{title:"Rich dad poor dad",author:"Robert",year:2000},{title:"And Then There Were None",author:"Agatha Christie",year:2000},{title:"Harry Potter and the Philosopher's Stone",author:"J. K. Rowling",year:2000}];
+
+function remove(arr,str){
+    let n;
+    for(i=0;i<arr.length;i++){
+        if(arr[i].title==str){
+            n=i;
+            break;
+        }
+    }
+    arr.splice(n,1);
+    return arr;
+}
+console.log(remove(arr,"The Hidden Hindu"));
+____________________________________________________________________________________________________________________________________
+Problem 4
+4.Student InfoCreate an object named student with properties for name, age, and grade. Initialize it with some sample data. Then, write code to print out all the information about the student.
+
+const InfoCreate={}
+
+InfoCreate.name="Satya Deva";
+InfoCreate.age=23;
+InfoCreate.grade="A+";
+
+console.log(InfoCreate);
+
+________________________________________________________________________________________________________________________________________
+Problem 5
+Add Book CategoryCreate an object named book with properties for title, author, and pages. Initialize it with some sample data. Then, write code to add a new property named category with a value of "Fiction" to the book object, and print out the modified information.
+
+const CategoryCreate={
+       title:"Atomic Habits",
+author:"James Clear",
+pages:567
+};
+console.log(`Before insertion: `,CategoryCreate)
+CategoryCreate.category="Fiction";
+console.log(`After insertion: `,CategoryCreate);
