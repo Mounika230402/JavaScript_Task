@@ -1,0 +1,36 @@
+1) Take an arr = [1,2,3,4,5] print the array using array iteration methods
+
+arr=[1,2,3,4,5]
+console.log("foreach")
+arr.forEach(x=>console.log(x))
+console.log("map")
+arr.map(x=>console.log(x))
+console.log("filter")
+arr.filter(x=>console.log(x))
+
+2)arr[{name:"prashnth",age:20},{name:"teja",age:22},{name:"shiva",age:15}];
+output:prashanth,teja 
+need to filter the array whose age is greater than 18
+arr=[{name:"prashnth",age:20},{name:"teja",age:22},{name:"shiva",age:15}];
+
+let res=arr.filter((x)=>{
+    if(x.age > 18)
+    console.log(x.name)})
+
+4)arr=[1,2,3,4,5] sum of the array elements using reduce()
+output: 15
+
+
+arr=[1,2,3,4,5]
+let res1=arr.reduce((acc,value)=>{
+    return acc+value;
+})
+console.log(res1);
+
+5)arr ={13,67,31,45,11,10,77,88] check whether every element in the array is greater than 18 or not using every method perform the same input using some() method
+
+arr =[13,67,31,45,11,10,77,88]
+let res1=arr.some(x=>x>18)
+console.log(res1)
+let res=arr.every(x=>x>18)
+console.log(res)
