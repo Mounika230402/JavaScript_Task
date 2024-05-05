@@ -1,0 +1,512 @@
+1) Create a function that takes two numbers as arguments and returns their sum.
+function sum(a,b){
+    return a+b;
+}
+console.log(sum(2,34));
+
+2)Write a function that takes an integer minutes and converts it to seconds.
+function convert_minutes_to_seconds(minutes){
+    return minutes*60;
+}
+console.log(convert_minutes_to_seconds(30));
+
+3)Create a function that takes a number as an argument, increments the number by +1 and returns the result.
+
+function increment(number){
+    return ++number;
+}
+console.log(increment(6))
+
+
+4)Create a function that takes the age in years and returns the age in days.
+function convert_years_to_days(years){
+    return years*365;
+}
+console.log(convert_years_to_days(18));
+5)sniCreate a function that takes voltage and current and returns the calculated power.
+function power(i,v){
+    return i*v;
+}
+console.log(power(14,345));
+6)Write a function that returns the string "something" joined with a space " " and the given argument a.
+function greet(a){
+    return "something" + " " + a;
+}
+console.log(greet("Mounika"))
+
+
+7)Create a function that takes two arguments. Both arguments are integers, a and b. Return true if one of them is 10 or if their sum is 10.
+
+function sum_of_numbers(a,b){
+    return a==10 || b==10 || a+b==10;
+}
+console.log(sum_of_numbers(15,5));
+
+
+8)Create a function that takes two strings as arguments and returns either true or false depending on whether the total number of characters in the first string is equal to the total number of characters in the second string.
+
+function Check_numbers_of_characters(str1,str2){
+    if(count_of_characters(str1)==count_of_characters(str2))
+    return true;
+    else
+    return false;
+}
+
+function count_of_characters(str){
+    count=0;
+    for(i=0;i<str.length;i++){
+        if(str[i]>='a' && str[i]<='z' || str[i]>='A' && str[i]<='Z')
+        count++;
+    }
+    return count;
+}
+console.log(Check_numbers_of_characters("abcde","mn_opq"))
+
+
+9)Create a function that takes a name and returns a greeting in the form of a string. Don't use a normal function, use an arrow function.
+
+var greetings=(name)=>{
+    return "Good Morning " + name
+};
+console.log(greetings("Mounika"));
+
+10)Create a function that takes an array of 10 numbers (between 0 and 9) and returns a string of those numbers formatted as a phone number (e.g. (555) 555-5555).
+
+function number(arr){
+    str="("
+    for(i=0;i<arr.length;i++){
+        str+=arr[i]
+        if(i==2)
+        str+=")"
+        if(i==5)
+        str+="-"
+    }
+    return str;
+}
+console.log(number([5,4,6,2,7,9,1,8,6,3]))
+
+11)Create a function that returns an array of strings sorted by length in ascending order.
+Example:
+sortByLength(["a", "ccc", "dddd", "bb"]) ➞ ["a", "bb", "ccc", "dddd"]
+
+arr=["a","ccc","dddd","bb"]
+b=[]
+for(i=0;i<arr.length;i++){
+    max=0
+    index=0
+    for(j=0;j<arr.length;j++)
+        {
+            if(max<arr[j].length){
+                max=arr[j].length
+                index=j
+            }
+        }
+    b[i]=arr[index]
+    arr[index]=""
+}
+console.log(b.reverse())
+12)Create a function that takes an array of arrays with numbers. Return a new (single) array with the largest numbers of each.
+Example:
+findLargestNums([[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]]) ➞ [7, 90, 2]
+
+function maximum(arr)
+{
+    max=arr[0]
+    for(let i=1;i<arr.length;i++){
+        if(max<arr[i])
+        max=arr[i]
+    }
+    return max;
+}
+function findLargestNums(array){
+    let a=[]
+    for(i=0;i<array.length;i++)
+    {
+        let s=array[i]
+        a[i]=maximum(s);
+    }
+    return a;
+}
+
+console.log(findLargestNums([[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]]))
+
+13) Create a function that takes an array of numbers and returns the second largest number.
+Example:
+secondLargest([10, 40, 30, 20, 50]) ➞ 40
+
+function secondLargest(arr)
+{
+    num=0
+    max=0
+    j=0
+    do{
+        max=0
+        for(i=0;i<arr.length;i++){
+            if(arr[i]>max){
+                max=arr[i]
+                num=i
+            }   
+        }
+        arr[num]=0
+        j++
+    }while(j!==2)
+    return max
+}
+console.log(secondLargest([10, 40, 60, 20, 50]));
+14)Create a function that takes an array of items, removes all duplicate items and returns a new array in the same sequential order as the old array (minus duplicates).
+Example:
+
+removeDups([1, 0, 1, 0]) ➞ [1, 0]
+
+removeDups(["The", "big", "cat"]) ➞ ["The", "big", "cat"]
+
+function removeDups(arr){
+    let a=[]
+    a[0]=arr[0]
+    for(i=1;i<arr.length;i++){
+        c=0
+        for(j=0;j<a.length;j++){
+            if(arr[i]==a[j]){
+                c=1;
+                break
+            }
+        }
+        if(c==0)
+        a[j]=arr[i]
+    }
+    return a
+}
+console.log(removeDups(["The", "big", "cat","big","The",1,2,33,3,3,3]))
+
+15)Create a function that takes an array of integers as an argument and returns a unique number from that array. All numbers except unique ones have the same number of occurrences in the array.
+
+Example:
+
+findSingleNumber([2, 2, 2, 3, 4, 4, 4]) ➞ 3
+
+function SearchNumber(arr,num){
+    let count=0
+    for(let i=0;i<arr.length;i++)
+    {
+        if(num==arr[i])
+        count++;
+    }
+    return count
+}
+
+function findSingleNumber(arr){
+    for(i=0;i<arr.length;i++){
+    if(SearchNumber(arr,arr[i])==1)
+    return arr[i];
+}
+}
+console.log(findSingleNumber([2, 2, 3, 3, 4, 5, 5]))
+16)Create a function that takes two strings as arguments and returns the number of times the first string (the single character) is found in the second string.
+Example:
+
+charCount("c", "Chamber of secrets") ➞ 1
+
+function CharCount(c,str){
+    let count=0
+    for(i=0;i<str.length;i++)
+    {
+        if(c==str[i])
+        count++;
+    }
+    return count;
+}
+console.log(CharCount("s","Chambers of secrets"))
+
+17)Create a function that takes a string and returns the number (count) of vowels contained within it.
+Example:
+
+countVowels("Celebration") ➞ 5
+
+function countVowels(str){
+    let count=0;
+    vowels=['a','e','i','o','u','A','E','I','O','U']
+    for(i=0;i<str.length;i++){
+        for(j=0;j<vowels.length;j++)
+        {
+            if(str[i]==vowels[j])
+            {
+                count++;
+                break;
+            }
+        }
+    }
+    return count;
+}
+console.log(countVowels("Celebration"));
+
+18) Given a string, create a function to reverse the case. All lower-cased letters should be upper-cased, and vice versa.
+Example:
+reverseCase("Happy Birthday") ➞ "hAPPY bIRTHDAY"
+
+function conversion(str){
+    let str1=""
+    for(i=0;i<str.length;i++){
+        if(str[i]==str[i].toUpperCase())
+        str1+=str[i].toLowerCase();
+        else
+        str1+=str[i].toUpperCase();
+    }
+    return str1
+}
+console.log(conversion("Happy Birthday"))
+ 19) Take one integer n, loop till n and pass each value to a function, create a function that takes one integer parameter, and multiply with 2 in every integer.
+			
+			Input:      n=5
+			Output:   2 4 6 8 10
+
+			Explanation:  Loop start with 1 go till 5 bcoz n=5
+					1 x 2 =2, 2 x 2=4, 3 x 2=6 …..etc 
+
+function multiply(n){
+    for(i=1;i<=n;i++){
+        console.log(i*2)
+    }
+}
+multiply(5)
+ 20. Create Function that will take one parameter and return type of the data.
+			
+			Input:       500
+			Output:     Integer
+
+			Input:       Coding
+			Output:    String
+var type=(input)=>{
+    return typeof(input)
+}
+console.log(type(50.0))
+
+ 21. Program to find greatest of three numbers(using ternery operator).
+
+			Input:  4 8 2
+			Output: 8 is gretest
+
+var greatest=(a,b,c)=>{
+    return a>b && a>c?a:b>c?b:c
+}
+console.log(greatest(4,8,2), "is greatest")
+
+22 . C Program to find factorial of number.
+		
+Input: n=5
+Output: 120
+
+Explanation: 5 x 4 x 3 x 2 x 1 = 120
+
+function factorial(num){
+    if(num==0 || num==1)
+    return 1
+    else
+    return num*factorial(num-1)
+}
+console.log(factorial(10))
+
+-----------------------------------------------------------------------------------------------------
+23. C Program to arrange numbers in ascending order
+Input: [2,3,1,5,4]
+Output: [1,2,3,4,5]
+
+    Sort the Array using loop only(you can not use predefined function).
+
+a=[2,3,1,5,4]
+for(i=0;i<a.length;i++){
+    for(j=i+1;j<a.length;j++){
+        if(a[i]>a[j]){
+            let temp=a[i]
+            a[i]=a[j]
+            a[j]=temp
+        }
+    }
+}
+console.log(a)
+24. Print Patter using loop.
+
+1
+1 2
+1 2 3
+1 2 3 4
+  1 2 3 4 5
+
+function pattern(n){
+    let str=""
+    for(i=1;i<=n;i++){
+        for(j=1;j<i+1;j++)
+        {
+            str+=j+" "
+        }
+        if(i==n)
+        continue
+        str+="\n"
+    }
+    return str
+}
+console.log(pattern(5));
+
+25. C Program to Calculate the Power of a Number(using loop only).
+
+Input: n=5, p=3
+Output: 5 ^ 3 = 125
+Explanation: 5 x 5 x 5 = 125
+
+function power(n,p)
+{
+    let power=1;
+    for(i=1;i<=p;i++)
+    power*=n;
+    return power;
+}
+console.log(power(7,3))
+
+26. Program to Check Whether a Number is Prime or Not
+
+Input: 9
+Output: 9 is not a prime no
+
+Input: 7
+Output : 7 is a prime no
+
+function prime(num){
+    flag=0;
+    for(i=2;i<num;i++){
+        if(num%i==0)
+        {
+            console.log(`${num} is not a prime`);
+            flag=1
+            break;
+        }
+    }
+    if(flag==0)
+    console.log(`${num} is a prime`);
+}
+prime(5)
+27. Program to find LCM of two numbers using while loop
+
+Input: 15 50
+Output: Lcm of 15 and 50 is 150.
+
+function LCM(a,b){
+    let high=a>b?a:b;
+    let small=a<b?a:b;
+    for(i=high;true;i+=high){
+        if(i%small==0)
+        break
+    }
+    return i
+}
+console.log(LCM(8,9));
+
+28. Program to Display Characters from A to Z Using Loop with count.
+
+Output: A1 B2 C3 D4 E5 F6 ……. Z26 
+
+array=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+for(i=0;i<array.length;i++){
+    console.log(array[i]+(i+1))
+}
+
+29. Program to find a missing number
+
+Input:  n=5(length of array), arr= [5,3,1,4]
+Output: 2 is missing
+
+Using loop only(you can not use predefined function)
+
+function min(arr){
+    let min1=arr[0]
+    for(i=0;i<arr.length;i++)
+    {
+       if(min1>arr[i])
+        min1=arr[i];
+    }
+    return min1
+}
+arr=[15,12,11,13,16]
+let res=min(arr)
+while(true){
+    flag=0
+    for(j=0;j<arr.length;j++){
+        if(res==arr[j]){
+            res=res+1;
+            flag=1
+            break;
+        }
+    }
+    if(flag==0){
+    console.log(res)
+    break;
+    }
+}
+
+30. Program to count vowels and consonants in a given String.
+
+Input: i am ram
+Output: 3 vowels 3 consonants.
+
+function vowels_and_consonants(str){
+    v_count=0
+    c_count=0
+    vowels=['a','e','i','o','u','A','E','I','O','U']
+    for(i=0;i<str.length;i++){
+        flag=0
+        if(str[i]>='a' && str[i]<='z' || str[i]>='A' && str[i]<='Z'){
+        for(j=0;j<vowels.length;j++){
+            if(str[i]==vowels[j]){
+                flag=1
+                v_count++;
+                break;
+            }
+        }
+        if(flag==0)
+        c_count++
+    }
+    
+    }
+    return `${v_count} vowels ${c_count} consonants`;
+}
+console.log(vowels_and_consonants("i am mounika"));
+
+31. program to insert  the elements of an array for specific index.
+
+Input: [1,2,3,4,5,7,8,9,10] , index=5
+Output: [1,2,3,4,5,6,78,9,10]
+
+function insert(arr,index){
+    arr.splice(index,0,6)
+    return arr
+}
+console.log(insert([1,2,3,4,5,7,8,9,10],5))
+32. Reverse a number using while Loop
+
+Input: 123
+Output: 321
+
+function reverse(num){
+    num=num.toString();
+    str=""
+    i=num.length-1;
+    while(i>=0){
+        str+=num[i]
+        i--;
+    }
+    return str
+}
+console.log(reverse(123))
+
+33. Count occurrence of number:
+
+Input: [1,6,3,1,5,9,7,2,1,9,3,7,8,9,10] , no find=7
+Output: 7 present 2 times.
+
+function Count(arr,num){
+    let count=0;
+    for(i=0;i<arr.length;i++){
+        if(num==arr[i])
+        count++;
+    }
+    return `${num} present ${count} times`;
+}
+console.log(Count([1,6,3,1,5,9,7,2,1,9,3,7,8,9,10],7))
